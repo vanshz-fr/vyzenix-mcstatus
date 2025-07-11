@@ -4,25 +4,24 @@
 ![Node.js ≥14.0](https://img.shields.io/badge/Node.js-%E2%89%A514.0-blue)
 ![License](https://img.shields.io/badge/License-CUSTOM-blue)
 
-Vyzenix-McStatus is a professional Node.js package for checking Minecraft server status with support for both CLI and web interface, real-time status API, and formatted MOTD output.
+**Vyzenix-McStatus** is a robust Node.js package for checking Minecraft server status with a beautiful web interface, RESTful JSON API, CLI, real-time updates, and advanced MOTD formatting. Fast, reliable, and packed with features for both players and server admins.
 
 ---
 
-## 🚀 Features
+## 🚩 Features
 
-* Real-time Minecraft server status
-* Built-in Web Interface
-* JSON API endpoints
-* Color and style support in MOTD
-* SRV record and DNS resolution
-* Auto-retry on failures
-* Easy CLI usage
-* Customizable web server
-* Full error handling system
+- 🔗 Real-time Minecraft server status
+- 🌐 Modern Web Interface & RESTful API
+- 🖥️ CLI tool for quick server checks
+- 🎨 MOTD color & style rendering (text & HTML)
+- 🧭 SRV record & DNS resolution
+- ♻️ Auto-retry & full error handling
+- ⚙️ Highly customizable web server
+- 🔒 Production-ready and fully documented
 
 ---
 
-## 📆 Installation
+## 📦 Installation
 
 ```bash
 npm install vyzenix-mcstatus
@@ -30,7 +29,7 @@ npm install vyzenix-mcstatus
 
 ---
 
-## 📄 Usage
+## ⚡ Quick Start
 
 ### As a Node.js Module
 
@@ -63,7 +62,7 @@ npx vyzenix-mcstatus serve --port 3000
 
 ## 🌐 Web Interface
 
-Start web server:
+**Start the web server:**
 
 ```js
 const { startWebServer } = require('vyzenix-mcstatus');
@@ -77,7 +76,7 @@ startWebServer({
 });
 ```
 
-### Endpoints
+#### Endpoints
 
 | Endpoint                   | Description            |
 | -------------------------- | ---------------------- |
@@ -87,17 +86,17 @@ startWebServer({
 
 ---
 
-## 📘 API Documentation
+## 📚 API Documentation
 
-### getStatus(host, \[port], \[timeout])
+### `getStatus(host, [port], [timeout])`
 
-#### Parameters:
+#### Parameters
 
-* `host` (string): Minecraft server hostname or IP
-* `port` (number, optional): default = 25565
-* `timeout` (number, optional): default = 5000 ms
+- `host` (string): Minecraft server hostname or IP
+- `port` (number, optional): default = 25565
+- `timeout` (number, optional): default = 5000 ms
 
-#### Returns:
+#### Returns
 
 ```json
 {
@@ -127,9 +126,9 @@ startWebServer({
 
 ---
 
-## 🔧 MinecraftClient Class
+## 🏗️ MinecraftClient Class
 
-### Constructor Options:
+### Constructor Options
 
 ```js
 {
@@ -143,17 +142,17 @@ startWebServer({
 }
 ```
 
-### Methods:
+### Methods
 
-* `getStatus()` – Fetches Minecraft server status
-* `resolveHost()` – Resolves DNS + SRV
-* `parseMOTD(desc)` – Formats raw MOTD to text and HTML
+- `getStatus()` – Fetches server status
+- `resolveHost()` – Resolves DNS & SRV
+- `parseMOTD(desc)` – Formats raw MOTD to text and HTML
 
 ---
 
-## 🫰 Error Handling
+## 🛡️ Error Handling
 
-You can catch and handle specific error types like:
+Catch and handle specific error types:
 
 ```js
 const { getStatus, errors } = require('vyzenix-mcstatus');
@@ -171,16 +170,16 @@ try {
 }
 ```
 
-### Available Error Classes:
+**Available Error Classes:**
 
-* `MinecraftError`
-* `TimeoutError`
-* `ProtocolError`
-* `DNSError`
+- `MinecraftError`
+- `TimeoutError`
+- `ProtocolError`
+- `DNSError`
 
 ---
 
-## 📊 Example Web Server with Views & Static
+## 🖥️ Example: Custom Web Server with Views & Static Assets
 
 ```js
 const { startWebServer } = require('vyzenix-mcstatus');
@@ -197,14 +196,13 @@ startWebServer({
 
 ---
 
-## 💻 Hosting Guide
+## 🚀 Deployment & Hosting
 
 ### Localhost
 
 ```bash
 node server.js
 ```
-
 Visit: `http://localhost:3000`
 
 ---
@@ -213,8 +211,9 @@ Visit: `http://localhost:3000`
 
 ```bash
 npm install -g pm2
-now create a server.js file with the following code:
-// server.js
+# Create server.js:
+```
+```js
 const { startWebServer } = require('./index'); // or 'vyzenix-mcstatus' if installed globally
 
 startWebServer({
@@ -224,6 +223,8 @@ startWebServer({
 }).then(server => {
   console.log(`🌐 Web server running on http://localhost:${server.port}`);
 }).catch(console.error);
+```
+```bash
 pm2 start server.js --name vyzenix-mcstatus
 pm2 save
 pm2 startup
@@ -233,34 +234,40 @@ pm2 startup
 
 ### Free Hosting Platforms
 
-* [Railway](https://railway.app)
-* [Render](https://render.com)
-* [Replit](https://replit.com)
-* [Glitch](https://glitch.com)
+- [Railway](https://railway.app)
+- [Render](https://render.com)
+- [Replit](https://replit.com)
+- [Glitch](https://glitch.com)
 
 ---
 
-## 🛠 Development Setup
+## 🧑‍💻 Development Setup
 
 ```bash
 git clone https://github.com/vanshzexe/vyzenix-mcstatus.git
 cd vyzenix-mcstatus
 npm install
-npm start // Only For Start Web Server
+npm start
+```
+
+Or use CLI:
+
+```bash
+npx vyzenix-mcstatus start
+npx vyzenix-mcstatus check mc.example.com
 ```
 
 ---
-``` Use By CMD 
-npx vyzenix-mcstatus start // Only For Start Web Server
-npx vyzenix-mcstatus check mc.example.com // Only For Check Server Raw Code
 
-## 📋 License
+## 📜 License
 
-This project is licensed under a **CUSTOM LICENSE**.
-See `LICENSE.txt` for full terms and conditions.
+This project is licensed under a **CUSTOM LICENSE**.  
+See [`LICENSE.txt`](LICENSE.txt) for full terms.
 
 ---
 
 ## 💚 Author
 
 Developed with 💻 by [@vanshzexe](https://github.com/vanshzexe)
+
+---
