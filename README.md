@@ -268,6 +268,6 @@ See [`LICENSE.txt`](LICENSE.txt) for full terms.
 
 ## 💚 Author
 
-Developed with 💻 by [@vanshzexe](https://github.com/vanshzexe)
+Developed with 💻 by [@vanshzexe](https://github.com/vanshz-fr)
 
 ---
