@@ -1,0 +1,60 @@
+/* web/public/css/style.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.motd {
+    font-family: 'Minecraft', monospace;
+    white-space: pre-wrap;
+}
+
+.favicon {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.player-list {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+@media (max-width: 768px) {
+    .player-list {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
+}
+
+.progress {
+    height: 1.5rem;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.server-status {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/fonts/Minecraft.woff2') format('woff2'),
+         url('/fonts/Minecraft.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
